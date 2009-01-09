@@ -1,0 +1,10 @@
+%h1=t('new_user')
+
+%p 
+  - form_for @user, :url => admin_users_path do |f| 
+    %br
+      = f.error_messages
+    %br
+      = render :partial => "form", :object => f 
+    %br
+      = f.submit t('update')

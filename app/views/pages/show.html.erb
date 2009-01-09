@@ -1,0 +1,8 @@
+<% content_for :big_header do%>
+  <%=@page.title %>
+<%end%>
+
+<%= @page.contents %>
+
+<%= link_to t('edit_page'), edit_page_path(@page) if current_user.is_admin? %>
+

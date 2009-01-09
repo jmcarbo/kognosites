@@ -1,0 +1,50 @@
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
+    %title= (yield:title) || t("institution")
+    %meta{ :name => "keywords", :content => "" }
+    %meta{ :name => "description", :content => "" }
+    = stylesheet_link_tag "default", :media => "screen", :cache => true
+    = yield:javascripts
+    = javascript_include_tag :all, :cache => true
+    = javascript_include_tag 'lowpro'
+    = record_select_includes
+
+    
+  %body
+    / start header
+    #header
+      #logo
+        %h1
+          %a{ :href => "/" }
+            =(yield:big_header) || t("big_header")
+        %p
+          /%a{ :href => "http://www.freecsstemplates.org/" }
+          /  By Free CSS Templates
+      #menu
+        %ul
+          %li
+            =link_to t('admin'), admin_users_url if current_user && current_user.is_admin?
+          %li
+            =link_to t('logout'), logout_url if current_user
+
+    / end header
+    / start page
+    #page
+      / start sidebar
+      / end sidebar
+      / start content
+      #content
+        = yield
+      / end content
+      %br{ :style => "clear: both;" }
+    / end page
+    / start footer
+    #footer
+      %p.links
+
+      %p.legal
+        ="\&copy;2009 #{ t "institution"}."
+        \&nbsp;&nbsp;&nbsp;&nbsp;
+
+    / end footer

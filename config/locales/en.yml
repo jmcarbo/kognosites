@@ -1,0 +1,15 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  institution: "Institucio"
+  big_header: "Departament"
+  logout: "Sortir"
+  admin: "Administració"
+  editing_page: "Editant plana"
+  new_page: "Creant nova plana"
+  edit_page: "Editar plana"
+  update: "Actualitzar"
+  new_user: "Nou usuari"
+  edit: "Editar"
+  destroy: "Eliminar"

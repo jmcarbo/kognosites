@@ -1,0 +1,58 @@
+RjsBehaviors
+============
+
+Nice low pro behaviors for rails.
+
+Example
+=======
+
+Create a behaviors controller like this:
+
+  class BehavioursController < ApplicationController
+    def general
+      render :behaviours do
+        
+        behavior('#title') do |page, this|
+          this.add_class_name('boo')
+        end
+        
+        behavior('#hello:title') do |page, this|
+          this.toggle_class_name('boo')
+          this.toggle_class_name('yeah')
+        end
+        
+        behavior('a.delete', 'Remote.Link', :method => 'delete')
+        
+      end
+    end
+  end
+
+Add a BJS file called app/views/behaviours/sortable.js.bjs :
+
+  behavior('ul.sortable') do |page, this|
+    page.sortable(this)
+  end
+
+Add a route to your controller:
+
+  map.behaviour 'javascripts/behaviours/:action.js', :controller => 'behaviours', :format => 'js'
+
+Include LowPro in your layout:
+
+  <head>
+    ...
+    <%= javascript_include_tag 'lowpro' %>
+    ...
+  </head>
+
+Include your behaviour in your layout:
+
+  <head>
+    ...
+    <%= javascript_include_tag behaviour_path('general') %>
+    <%= javascript_include_tag behaviour_path('sortable') %>
+    ...
+  </head>
+
+
+Copyright (c) 2008 Simon Menke, released under the MIT license

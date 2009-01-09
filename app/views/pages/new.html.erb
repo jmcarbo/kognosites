@@ -1,0 +1,10 @@
+<% content_for :javascripts do %>
+  <%= javascript_include_tag :fckeditor %>
+<%end%>
+<h1><%=t 'new_page'%></h1>
+
+<% form_for(@page) do |f| %>
+<%= render :partial => 'form' , :object => f %>
+<% end %>
+
+

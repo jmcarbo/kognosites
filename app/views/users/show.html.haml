@@ -1,0 +1,28 @@
+%br
+  %b Login:
+  =h @user.login
+
+  %b Login count:
+  =h @user.login_count
+%br
+  %b Last request at:
+  =h @user.last_request_at
+
+%br
+  %b Last login at:
+  =h @user.last_login_at 
+
+%br
+  %b Current login at:
+  =h @user.current_login_at
+
+%br
+  %b Last login ip:
+  =h @user.last_login_ip
+
+%br
+  %b Current login ip:
+  =h @user.current_login_ip
+ 
+%p
+  = link_to 'Edit', edit_account_path

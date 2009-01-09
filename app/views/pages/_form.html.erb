@@ -1,0 +1,17 @@
+<p/>
+  <%= form.error_messages %>
+
+
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+    <p/>
+    <%= form.label :title %><br />
+    <%= form.text_field :title %>
+    <p/>
+    <%= form.label :scope %><br />
+    <%= form.text_field :scope %>
+    <p/>
+    <%= form.label :contents %><br />
+    <%= fckeditor_textarea("page", "contents", :toolbarSet => 'Simple', :width => '100%', :height => '400px') %>
+    <p/>
+    <%= form.submit "Update" %>

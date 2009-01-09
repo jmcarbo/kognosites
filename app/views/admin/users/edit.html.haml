@@ -1,0 +1,11 @@
+%h1 Edit Account
+ 
+- form_for @user, :url => admin_user_path do |f| 
+  = f.error_messages
+  %br
+    = render :partial => "form", :object => f
+  %br
+    = f.submit t('update')
+
+%p
+  = link_to "Usuaris", admin_users_path
