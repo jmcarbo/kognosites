@@ -4,3 +4,4 @@ tmp/*
 public/files/*
 files/*
 db/*.sqlite3
+config/deploy.rb
